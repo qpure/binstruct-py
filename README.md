@@ -29,7 +29,7 @@ switch.addswitch(8,step(16))
 #add a switch,when checkfunc's result for processing 8 to 8's comparasion is right,invoke the step(16)
 ```
 **`flagstep`**
-This is another step for processing `flags`(or `bitmask`).  
+This is another step for processing `flags`(AKA `bitmask`).  
 
 |Method|Args|Description|Returns|
 |:-----------|:----------------:|:----------|--------:|
@@ -37,6 +37,12 @@ This is another step for processing `flags`(or `bitmask`).
 |genFromDict|`flags:dict`,`flagpos='value'`|generate flags on `flagpos` side of dict And store it.|None|  
 
 **`valuestep`**  
-This `step` is a little bit complicated.
+This `step` is a little bit complicated but useful.It dynamically gets the datas got in the `StepProcessor` class(**field** `ret`),turn them into numbers by custom function(or use default) , and generate the same value amount of steps (which is also customized), and pass it to the processor to process it dynamically.  
+
+**`gotostep`**  
+this class was created With a wrong purpose but gave me a better idea.I am still developing This class.it has a different use right now.  
+This class is currently used in `switchstep`.it just gets the switch in switchstep and do the same thing as the switch.  
+My purpose is to let it go back to a specific step in order to do sth like **loop**,**skip** or other.  
+
 
 
